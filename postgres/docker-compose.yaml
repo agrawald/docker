@@ -1,0 +1,21 @@
+version: '2'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    ports:
+      - "5432:5432"
+  pgadmin4:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports: 
+      - 5440:80
+      - 5443:443
+    links: 
+      - postgres
+
+
+      
